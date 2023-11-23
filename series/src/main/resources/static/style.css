@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container {
+    height: 1200px;
+    padding: 100px;
+}
+
+.container-site {
+    text-align: center;
+    height: 1200px;
+    padding: 80px;
+    background-color: #e4e4e4;;
+}
+
+.title{
+    font-size: 40px;
+    font-weight: bolder;
+    padding: 0px 0px 20px;
+}
+
+.card {
+    width: 500px;
+    padding: 20px;
+    margin: 20px;
+    text-align: left;
+}
+
+.button{
+    margin: 20px 0px;
+}
+
+.card:hover{
+    cursor: pointer;
+    box-shadow: 10px 10px rgb(64, 80, 86);
+    transition: 0.4s;
+}
+
+.card-title {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.sinopse {
+    height: 170px;
+    padding: 5px 0px;
+}
+
+label {
+    font-weight: bold ;
+    font-size: 18px;
+}
+.column{
+    padding: 15px 0px;
+}
+
+.card-text {
+    text-align: justify;
+}

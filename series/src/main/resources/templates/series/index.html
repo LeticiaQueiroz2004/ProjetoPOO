@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Séries</title>
+</head>
+<body>
+    <div class="container-site">
+    <h1 class="title"> Séries cadastradas </h1>
+
+    <a href="/series/form" class="btn btn-secondary button"> Nova Série </a>
+
+    <div class="">
+        <div class="container-row">
+            <div class="card" th:each="serie : ${series}">
+                <div class="card-body">
+                    <div class="card-title" th:text="${serie.NomeSerie}"> </div>
+                    <div class="column"> 
+                        <label>Sinopse: </label>
+                        <div class="card-text sinopse"th:text="${serie.Sinopse}"> </div>
+                    </div>
+                
+                    <div class="column"> 
+                        <label>Diretor: </label>
+                        <div class="card-text" th:text="${serie.Diretor}"> </div>
+                    </div>
+
+                    <div class="column"> 
+                        <label>Elenco Principal: </label>
+                        <div class="card-text" th:text="${serie.ElencoPrincipal}"> </div>
+                    </div>
+
+                    <div class="column"> 
+                        <label>Diretor: </label>
+                        <div class="card-text" th:text="${serie.Genero}"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

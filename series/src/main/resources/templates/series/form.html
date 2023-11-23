@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Adicionando Séries</title>
+</head>
+<body>
+    <div class="container">
+        <h1> Cadastrar Nova Série </h1>
+        <form action="" method="post" th:object="${serie}">
+            <div class="mb-3">
+                <label for="NomeSerie" class="form-label"> Nome da Série:  </label>
+                <input class="form-control" type="text" th:field="*{NomeSerie}"/>
+            </div>
+
+            <div class="mb-3">
+                <label for="Sinopse" class="form-label"> Sinopse: </label>
+                <textarea class="form-control" type="text" th:field="*{Sinopse}"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="Diretor" class="form-label"> Diretor: </label>
+                <input class="form-control" type="text" th:field="*{Diretor}"/>
+            </div>
+
+            <div class="mb-3">
+                <label for="ElencoPrincipal" class="form-label"> Elenco Principal: </label>
+                <input class="form-control" type="text" th:field="*{ElencoPrincipal}"/>
+            </div>
+
+            <div class="mb-3">
+                <label for="Genero" class="form-label"> Gênero: </label>
+                <input class="form-control" type="text" th:field="*{Genero}"/>
+            </div>
+
+            <div class="">
+                <a href="/series" class="btn btn-secondary"> Cancelar </a>
+                <button class="btn btn-primary"> Salvar </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
