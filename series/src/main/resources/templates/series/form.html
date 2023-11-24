@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../estilo.css">
     <link href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <title>Adicionando Séries</title>
 </head>
 <body>
-    <div class="container">
+    <div class="content">
         <h1> Cadastrar Nova Série </h1>
         <form action="" method="post" th:object="${serie}">
             <div class="mb-3">
@@ -31,16 +31,49 @@
                 <input class="form-control" type="text" th:field="*{ElencoPrincipal}"/>
             </div>
 
+            <hr>
             <div class="mb-3">
-                <label for="Genero" class="form-label"> Gênero: </label>
-                <input class="form-control" type="text" th:field="*{Genero}"/>
+                <label for="generoFilme" class="form-label">Gênero do filme</label>
+                <input
+                    type="text" class="form-control" list="generos"
+                    placeholder="Digite para buscar..." id="generoFilme">
+                <datalist id="generos">
+                    <option value="Ação"></option>
+                    <option value="Comédia"></option>
+                    <option value="Terror"></option>
+                    <option value="Drama"></option>
+                    <option value="Romance"></option>
+                    <option value="Documentário"></option>
+                </datalist>
             </div>
 
-            <div class="">
-                <a href="/series" class="btn btn-secondary"> Cancelar </a>
-                <button class="btn btn-primary"> Salvar </button>
-            </div>
-        </form>
-    </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Insira a capa da serie</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+
+                  <div class="">
+                    <a href="/series" class="btn btn-secondary"> Cancelar </a>
+                    <button id="cadastrarBtn" class="btn green">Cadastrar</button>
+                    <div id="alerta" class="alert alert-primary" role="alert" style="display:none;">
+                        Série Cadastrada com sucesso
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('cadastrarBtn').addEventListener('click', function() {
+                    document.getElementById('alerta').style.display = 'block';
+    
+                    // Adiciona um atraso de 3 segundos (3000 milissegundos) antes de esconder o alerta
+                    setTimeout(function() {
+                        document.getElementById('alerta').style.display = 'none';
+                    }, 3000);
+                });
+            });
+        </script>
 </body>
 </html>
