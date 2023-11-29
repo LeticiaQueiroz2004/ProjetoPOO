@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <link href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-
     <title>Séries</title>
+    <link rel="stylesheet" href="estilo.css">
+
 </head>
 <body>
     <div class="container-site">
@@ -35,9 +36,14 @@
                     </div>
 
                     <div class="column"> 
-                        <label>Diretor: </label>
+                        <label>Gênero: </label>
                         <div class="card-text" th:text="${serie.Genero}"> </div>
                     </div>
+
+                    <form th:action="@{'/series/{id}'(id=${serie.id})}" th:method="delete">
+                        <button>apagar</button>
+                    </form>
+        </div>
                     
                 </div>
             </div>

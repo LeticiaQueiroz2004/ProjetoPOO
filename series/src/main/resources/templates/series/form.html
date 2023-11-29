@@ -31,22 +31,13 @@
                 <input class="form-control" type="text" th:field="*{ElencoPrincipal}"/>
             </div>
 
-            <hr>
             <div class="mb-3">
-                <label for="generoFilme" class="form-label">Gênero do filme</label>
-                <input
-                    type="text" class="form-control" list="generos"
-                    placeholder="Digite para buscar..." id="generoFilme">
-                <datalist id="generos">
-                    <option value="Ação"></option>
-                    <option value="Comédia"></option>
-                    <option value="Terror"></option>
-                    <option value="Drama"></option>
-                    <option value="Romance"></option>
-                    <option value="Documentário"></option>
-                </datalist>
+                <label for="Genero" class="form-label"> Gênero </label>
+                <input class="form-control" type="text" th:field="*{Genero}"/>
             </div>
 
+            <hr>
+           
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Insira a capa da serie</label>
                     <input class="form-control" type="file" id="formFile">
@@ -75,5 +66,7 @@
                 });
             });
         </script>
+
+</script>
 </body>
 </html>
